@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Seleccionar Rol{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/cuadriLogin.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card card-corporativa shadow-lg border-0 rounded-4 overflow-hidden">
+        <!-- Header -->
+        <div class="card-header header-corporativo text-white text-center py-4">
+          <h3 class="mb-0 fw-bold">¿Cómo deseas iniciar sesión?</h3>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body text-center py-5">
+          <p class="mb-4 lead text-secondary">
+            Selecciona si eres <b>Cliente</b> o <b>Empresa</b>
+          </p>
+          <a href="{% url 'tickets:login_cliente' %}" class="btn btn-corporativo btn-lg w-100 mb-3 shadow-sm">
+            <i class="bi bi-person-fill me-2"></i> Cliente
+          </a>
+          <a href="{% url 'tickets:login_empresa' %}" class="btn btn-corporativo-2 btn-lg w-100 shadow-sm">
+            <i class="bi bi-building me-2"></i> Empresa
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

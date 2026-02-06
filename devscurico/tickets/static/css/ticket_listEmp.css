@@ -1,0 +1,181 @@
+/* ------------------ Tabla corporativa ------------------ */
+.table-responsive {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #004085, #0069d9);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+}
+
+.table tbody td {
+    background-color: #b3b1b1; /* gris muy claro */
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Fila hover */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 64, 133, 0.05);
+}
+
+.table tbody tr:nth-child(even) td {
+    background-color: #9cbcdb; /* gris claro para filas pares */
+}
+
+.table tbody tr:nth-child(odd) td {
+    background-color: #96aec4; /* blanco para filas impares */
+}
+
+/* ------------------ Badges ------------------ */
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+.badge.bg-success {
+    background-color: #198754 !important;
+}
+
+.badge.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+.badge.bg-primary {
+    background-color: #004085 !important;
+}
+
+.badge.bg-dark {
+    background-color: #343a40 !important;
+}
+
+/* ------------------ Botones corporativos ------------------ */
+.btn-info {
+    background-color: #004085;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #0069d9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.btn-success {
+    background-color: #198754;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background-color: #004085;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+    border-radius: 0.5rem;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+
+/* ------------------ Botón Ver Estadísticas azul ------------------ */
+.btn-estadisticas {
+    background-color: #004085; /* azul corporativo */
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: 1px solid #004085;
+    transition: all 0.3s ease;
+}
+
+.btn-estadisticas:hover {
+    background-color: #0069d9; /* azul más claro al pasar el mouse */
+    border-color: #0069d9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+
+/* ------------------ Cabecera página ------------------ */
+h2.fw-bold {
+    color: #004085;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Botones en grupo */
+.d-flex > .btn {
+    margin-left: 0.5rem;
+}
+
+/* ------------------ Botón Ver Estadísticas azul ------------------ */
+.btn-estadisticas {
+    background-color: #004085; /* azul corporativo */
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: 1px solid #004085;
+    transition: all 0.3s ease;
+}
+
+.btn-estadisticas:hover {
+    background-color: #0069d9; /* azul más claro al pasar el mouse */
+    border-color: #0069d9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}

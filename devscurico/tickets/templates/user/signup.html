@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Registrar Usuario{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/cuadriLogin2.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+  <div class="card shadow-lg p-0" style="max-width: 450px; width: 100%;">
+
+    <!-- Header -->
+    <div class="card-header text-center">
+      <h3 class="mb-0">Crear Cuenta</h3>
+    </div>
+
+    <!-- Body -->
+    <div class="card-body">
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        {% for field in form.visible_fields %}
+          <div class="mb-3">
+            <label class="form-label">{{ field.label }}</label>
+            <div class="input-group">
+              {% comment %} Iconos según el campo {% endcomment %}
+              {% if field.name == 'username' %}
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+              {% elif field.name == 'email' %}
+                <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+              {% elif field.name == 'password1' or field.name == 'password2' %}
+                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+              {% endif %}
+              {{ field }}
+            </div>
+            {% if field.errors %}
+              <div class="text-danger small">
+                {{ field.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary w-100 mb-2">Registrar</button>
+        <a href="{% url 'tickets:login' %}" class="btn btn-outline-secondary w-100">Cancelar</a>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer text-center">
+      <small>¿Ya tienes cuenta? <a href="{% url 'tickets:login' %}">Ingresar</a></small>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Detalle de Ticket{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm mb-4">
+      <div class="card-header text-center bg-primary text-white">
+        <h3>Ticket #{{ ticket.id }}</h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-sm-4">Asunto</dt>
+          <dd class="col-sm-8">{{ ticket.asunto }}</dd>
+
+          <dt class="col-sm-4">Descripción</dt>
+          <dd class="col-sm-8">{{ ticket.descripcion }}</dd>
+
+          <dt class="col-sm-4">Área</dt>
+          <dd class="col-sm-8">{{ ticket.get_area_trabajo_display }}</dd>
+
+          <dt class="col-sm-4">Prioridad</dt>
+          <dd class="col-sm-8">{{ ticket.get_prioridad_display }}</dd>
+
+          <dt class="col-sm-4">Estado</dt>
+          <dd class="col-sm-8">{{ ticket.get_estado_display }}</dd>
+
+          <dt class="col-sm-4">Técnico Asignado</dt>
+          <dd class="col-sm-8">
+            {% if ticket.tecnico %}
+              {{ ticket.tecnico.username }}
+            {% else %}
+              Sin asignar
+            {% endif %}
+          </dd>
+
+          <dt class="col-sm-4">Creado por</dt>
+          <dd class="col-sm-8">{{ ticket.creador.username }}</dd>
+
+          <dt class="col-sm-4">Creado</dt>
+          <dd class="col-sm-8">{{ ticket.fecha_creacion|date:"Y-m-d H:i" }}</dd>
+        </dl>
+      </div>
+
+      <div class="card-footer text-center">
+        {# --- ADMIN (puede editar y eliminar) --- #}
+        {% if is_admin %}
+          <a href="{% url 'tickets:ticket_update' ticket.id %}" class="btn btn-warning mx-1">Editar</a>
+          <a href="{% url 'tickets:ticket_delete' ticket.id %}" class="btn btn-danger mx-1">Eliminar</a>
+
+        {# --- EMPRESA (solo tomar/actualizar) --- #}
+        {% elif is_empresa %}
+          <a href="{% url 'tickets:ticket_update' ticket.id %}" class="btn btn-primary mx-1">Tomar / Actualizar</a>
+
+        {# --- CLIENTE (solo descartar si es el creador) --- #}
+        {% elif is_cliente and is_creator %}
+          {% if ticket.estado == "AB" %}
+            <a href="{% url 'tickets:ticket_descartar' ticket.id %}" class="btn btn-danger mx-1">Descartar</a>
+          {% endif %}
+        {% endif %}
+
+        {# Botón volver dinámico #}
+        {% if is_cliente %}
+          <a href="{% url 'tickets:ticket_list_cliente' %}" class="btn btn-secondary mx-1">Volver</a>
+        {% else %}
+          <a href="{% url 'tickets:ticket_list' %}" class="btn btn-secondary mx-1">Volver</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

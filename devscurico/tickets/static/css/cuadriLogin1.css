@@ -1,0 +1,110 @@
+/* ------------------ Tarjeta corporativa login ------------------ */
+.card.shadow-sm.p-4 {
+    border-radius: 1rem;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    border: 1px solid #004085;
+    background: linear-gradient(145deg, #f0f4f8, #e0e7ef);
+    overflow: hidden;
+    padding: 0;
+}
+
+/* ------------------ Header estilo corporativo ------------------ */
+.card.shadow-sm.p-4 h3.text-center.mb-4 {
+    background: linear-gradient(135deg, #004085 0%, #0069d9 100%);
+    color: #ffffff;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+/* ------------------ Body de la tarjeta ------------------ */
+.card.shadow-sm.p-4 .card-body {
+    padding: 2rem;
+}
+
+/* ------------------ Labels centrados ------------------ */
+.card.shadow-sm.p-4 .form-label {
+    font-weight: 600;
+    color: #004085;
+    text-align: center;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------ Input group corporativo ------------------ */
+.input-group-text {
+    background-color: #004085;
+    color: #fff;
+    border: 1px solid #004085;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+/* Centrar contenido de los input-groups */
+.card.shadow-sm.p-4 .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Asegura que los inputs tengan un ancho consistente */
+.card.shadow-sm.p-4 .input-group .form-control {
+    flex: 1 1 auto;  /* Crece para llenar el espacio */
+    text-align: left; /* Mantener texto a la izquierda */
+}
+
+
+.card.shadow-sm.p-4 .form-control {
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: 1px solid #004085;
+    padding: 0.5rem 0.75rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card.shadow-sm.p-4 .form-control:focus {
+    border-color: #0069d9;
+    box-shadow: 0 0 8px rgba(0,105,217,0.3);
+    outline: none;
+}
+
+/* ------------------ Botones corporativos ------------------ */
+.card.shadow-sm.p-4 .btn-primary {
+    background-color: #004085;
+    color: #ffffff;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.card.shadow-sm.p-4 .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.card.shadow-sm.p-4 .btn-outline-danger {
+    border-color: #28a745;
+    color: #28a745;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.card.shadow-sm.p-4 .btn-outline-danger:hover {
+    background-color: #28a745;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 768px) {
+    .card.shadow-sm.p-4 {
+        margin: 0 1rem;
+    }
+}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<div class="container">
+  <h2 class="text-center mb-4 fw-bold">📊 Resumen de Tickets</h2>
+  
+  <div class="row g-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm border-primary">
+        <div class="card-body text-center">
+          <h5 class="card-title text-primary">Abiertos</h5>
+          <p class="display-6">{{ abiertos }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm border-warning">
+        <div class="card-body text-center">
+          <h5 class="card-title text-warning">En Proceso</h5>
+          <p class="display-6">{{ en_proceso }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm border-success">
+        <div class="card-body text-center">
+          <h5 class="card-title text-success">Resueltos</h5>
+          <p class="display-6">{{ resueltos }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm border-dark">
+        <div class="card-body text-center">
+          <h5 class="card-title text-dark">Cerrados</h5>
+          <p class="display-6">{{ cerrados }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="{% url 'tickets:ticket_list' %}" class="btn btn-primary">📋 Ver todos los tickets</a>
+  </div>
+</div>
+{% endblock %}

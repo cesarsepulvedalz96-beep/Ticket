@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}403 - Prohibido{% endblock %}
+{% block content %}
+  <div class="text-center">
+    <h1 class="display-1">403</h1>
+    <p class="lead">Acceso prohibido. No tienes permisos para ver esta página.</p>
+    <a href="{% url 'tickets:ticket_list' %}" class="btn btn-primary">Volver al inicio</a>
+  </div>
+{% endblock %}

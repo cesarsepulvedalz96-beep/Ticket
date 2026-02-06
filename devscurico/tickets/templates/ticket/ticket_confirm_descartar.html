@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Descartar Ticket{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-header bg-danger text-white text-center">
+        <h4 class="mb-0">Descartar Ticket #{{ ticket.id }}</h4>
+      </div>
+      <div class="card-body">
+        <p>¿Deseas descartar este ticket?</p>
+        <p><strong>Asunto:</strong> {{ ticket.asunto }}</p>
+        <p><strong>Descripción:</strong> {{ ticket.descripcion|linebreaksbr }}</p>
+
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Descartar</button>
+          <a href="{% url 'tickets:ticket_detail' ticket.id %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
