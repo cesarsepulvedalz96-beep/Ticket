@@ -1,13 +1,21 @@
 {% extends "base.html" %}
+{%load static%}
 {% block title %}Detalle de Ticket{% endblock %}
+
+{%block extra_css%}
+<link href="{% static 'css/ticket_detail.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+{% endblock %}
+
 {% block content %}
 <div class="row justify-content-center">
   <div class="col-md-8">
-    <div class="card shadow-sm mb-4">
-      <div class="card-header text-center bg-primary text-white">
+    <div class="card card-corporativa shadow-sm mb-4">
+      <div class="card-header card-header-corporativo text-center">
         <h3>Ticket #{{ ticket.id }}</h3>
       </div>
       <div class="card-body">
+        <div class="detalle-scroll">
         <dl class="row">
           <dt class="col-sm-4">Asunto</dt>
           <dd class="col-sm-8">{{ ticket.asunto }}</dd>
@@ -39,7 +47,8 @@
           <dt class="col-sm-4">Creado</dt>
           <dd class="col-sm-8">{{ ticket.fecha_creacion|date:"Y-m-d H:i" }}</dd>
         </dl>
-      </div>
+      </di>
+    </div>
 
       <div class="card-footer text-center">
         {# --- ADMIN (puede editar y eliminar) --- #}
